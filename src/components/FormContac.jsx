@@ -18,16 +18,13 @@ export default class FormContac extends Component {
 
   addContact() {
     let oldContacts = [];
-    if (this.props.content.contacts != null) {
-      oldContacts = [...this.props.content.contacts];
-    }
     let alredyContact = [];
-    if (oldContacts != []) {
+    if (this.props.content.contacts !== null) {
+      oldContacts = [...this.props.content.contacts];
       alredyContact = oldContacts.filter(contact =>
         contact.name.toLowerCase().includes(this.state.name.toLowerCase())
       );
     }
-
     if (alredyContact.length === 0) {
       oldContacts.push({ id: nanoid(), ...this.state });
       this.props.setState(oldContacts);
