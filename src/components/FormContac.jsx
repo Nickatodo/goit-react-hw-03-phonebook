@@ -18,7 +18,7 @@ export default class FormContac extends Component {
 
   addContact() {
     let oldContacts = [];
-    if (this.props.content.contacts !== null) {
+    if (this.props.content.contacts != null) {
       oldContacts = [...this.props.content.contacts];
     }
     let alredyContact = [];
