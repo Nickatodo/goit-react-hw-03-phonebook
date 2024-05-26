@@ -32,9 +32,13 @@ export default class App extends Component {
 
   render() {
     const { contacts, filter } = this.state;
-    const filtrado = contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
+    let filtrado = [];
+    if (contacts != null) {
+      filtrado = contacts.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase())
+      );
+    }
+
     return (
       <>
         <h1>Phonebook</h1>
